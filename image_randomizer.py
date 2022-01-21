@@ -4,7 +4,7 @@ import random
 import json
 import piexif
 from piexif import helper
-import numpy
+import numpy as np
 
 layers_folder = os.path.join(os.getcwd(), 'generative-art-node', 'layers')
 LAYER_ORDER = ['background', 'ball', 'eye color',
@@ -134,12 +134,12 @@ def encode_user_comment(file_name, comment):
     piexif.insert(piexif.dump(exif_dict), file_name)
 
 def main():
-    print(set_weights(f'{layers_folder}\eye color', 1))
-    # img = generate_random_image(LAYER_ORDER)
-    # convert_to_jpg(img[0]).save('output/temp_file.jpg')
-    # output_filename = generate_image_name(420, img[1]['characteristics']['ball'], img[1]['characteristics']['eye color'], rare_elements=img[1]['rare_elements'], super_rare_elements=img[1]['super_rare_elements'])
-    # os.rename(os.path.join(os.getcwd(), 'output/temp_file.jpg'), os.path.join(os.getcwd(), f'output/{output_filename}'))
-    # encode_user_comment(f'output/{output_filename}', img[1])
+    # print(set_weights(f'{layers_folder}\eye color', 1))
+    img = generate_random_image(LAYER_ORDER)
+    convert_to_jpg(img[0]).save('output/temp_file.jpg')
+    output_filename = generate_image_name(420, img[1]['characteristics']['ball'], img[1]['characteristics']['eye color'], rare_elements=img[1]['rare_elements'], super_rare_elements=img[1]['super_rare_elements'])
+    os.rename(os.path.join(os.getcwd(), 'output/temp_file.jpg'), os.path.join(os.getcwd(), f'output/{output_filename}'))
+    encode_user_comment(f'output/{output_filename}', img[1])
 
 if __name__ == '__main__':
     main()
