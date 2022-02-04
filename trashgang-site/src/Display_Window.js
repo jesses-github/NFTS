@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import NFTBrowser from "./NFT_Browser";
 import About from "./About";
 

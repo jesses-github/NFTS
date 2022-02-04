@@ -60,8 +60,6 @@ def set_weights(folder, amount_of_separation=1.6):
     print(f'probabilities: {rarity_probabilities}')
     print(f"total prob: {rarity_total}")
     return rarity_probabilities
-    
-
 
 def add_image_layer(folder, final_image=None):
     folder_path = os.path.join(layers_folder, folder)
@@ -98,7 +96,6 @@ def generate_image_name(index, art_subject, qualifier, file_format='jpg', **kwar
     else: suffixes = parse_suffixes(**kwargs)
     return f"#{index} - {qualifier} {art_subject} with {suffixes}.{file_format}"
 
-
 def generate_random_image(folders):
     final_image = None
     metadata = {}
@@ -133,8 +130,27 @@ def encode_user_comment(file_name, comment):
     )
     piexif.insert(piexif.dump(exif_dict), file_name)
 
-def main():
-    # print(set_weights(f'{layers_folder}\eye color', 1))
+def write_corresponding_json(file_name, metadata):
+    '''Option to write metadata to json file instead of encoding as comment'''
+    write_target = f"{file_name.split('.')[0]}.json"
+    with open(write_target, 'w') as f: f.write(json.dumps(metadata))
+
+def create_sample_json():
+    backgrounds = ["train station", "space", "dark alley"]
+    bins = ["standard bin", "gold_bin_sr"]
+    lids = ["cat box lid", "standard lid"]
+    front_trashs = ["broken toy", "empty bottle", "air jordans"]
+    left_trashs = ["old tv", "sex toys"]
+    right_trashs = ["coathanger", "old clothes", "shoes"]
+    sample_metadata = {
+        "Authors": "Trashgang NFTs",
+        "characteristics": {"background": random.choice(backgrounds), "bin": random.choice(bins), "front trash": random.choice(front_trashs), "left trash": random.choice(left_trashs), "right trash": random.choice(right_trashs), "lid": random.choice(lids)},
+        "rare_elements": [],
+        "super_rare_elements": ["gold_bin_sr"]
+    }
+    return sample_metadata
+
+def main(write_to_json=False):
     img = generate_random_image(LAYER_ORDER)
     convert_to_jpg(img[0]).save('output/temp_file.jpg')
     output_filename = generate_image_name(420, img[1]['characteristics']['ball'], img[1]['characteristics']['eye color'], rare_elements=img[1]['rare_elements'], super_rare_elements=img[1]['super_rare_elements'])

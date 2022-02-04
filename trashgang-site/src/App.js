@@ -1,23 +1,12 @@
-import React, {useState} from "react";
-import Header from "./nav-header"
+import React from "react";
+// import Header from "./nav-header"
 import DisplayWindow from "./Display_Window";
-import { createTheme } from '@mui/material/styles';
-import { purple } from '@mui/material/colors';
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: purple[500],
-    },
-    secondary: {
-      main: '#f44336',
-    },
-  },
-});
+import trashgangBanner from "./TRASHGANG LUNA Banner.png";
 
 function App(){
   return ( <div className="app">
-    <Header />
+    {/* <Header /> */}
+    <img src={trashgangBanner} alt="Trashgang Banner" className="banner_image"/>
     <DisplayWindow />
     </div>
   );

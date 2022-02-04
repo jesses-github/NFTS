@@ -2,43 +2,55 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-link {
   color: #da74f3;
 }
 
 .app{
-  justify-content: space-around;
-  background-color: rgb(171, 104, 226);
-  min-height: 100vh;
+  background-color: rgba(1, 9, 12, 0.897);
 }
 
 .display_window{
   margin:auto;
-  width: 50%;
+  width: 100%;
   min-height: 100vh;
+  float: center;
+}
+
+.banner_image{
+  width: 100%;
+  position: relative;
+  background-size: cover;
+  float: center;
 }
 
 .carousel{
   display: flex;
   height: 200px;
+  position: relative;
+  justify-content: center;
+  justify-content: space-evenly;
+  float: center;
 }
 
 .nft{
-  border: 6px solid lightcyan;
+  border: 4px solid lightcyan;
   height: 200px;
   width: 200px;
   background:rgb(202, 157, 245);
+  display:flex;
+  flex-direction: row;
+  border-radius: 35px;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  /* align-items:center; */
+}
+
+.nav-button{
+  border: 2px whitesmoke;
+  height: 50px;
+  width: 50px;
+  background-color:rgb(42, 148, 190);
   display:flex;
   border-radius: 35px;
   flex-direction: column;
@@ -46,29 +58,18 @@
   align-items:center;
 }
 
-.nav-button{
-  border: 2px whitesmoke;
-  height: 200px;
-  width: 200px;
-  background:purple;
-  display:flex;
-  border-radius: 10px;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items:center;
-}
-
 .header{
-  height: 50px;
-  color: indianred;
+  background-color: lightgrey;
 }
 
 .browser{
   margin: auto;
   justify-content: space-around;
+  float: center;
 }
 
 .about{
   font: message-box;
   text-align: center;
+  float: center;
 }

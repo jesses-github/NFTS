@@ -1,2 +1,8 @@
 venv/
 secrets.json
+__pycache__/
+terra-core/
+LocalTerra/
+src/Sample NFTs/
+gif_generator_folder/
+sample_json*

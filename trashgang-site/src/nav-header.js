@@ -5,23 +5,10 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu"
-import { createTheme } from '@mui/material/styles';
-import { purple } from '@mui/material/colors';
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: purple[500],
-    },
-    secondary: {
-      main: '#f44336',
-    },
-  },
-});
 
 function Header(){
     return (
-        <AppBar position="static" color="primary">
+        <AppBar position="static" className="header">
             <Toolbar>
                 <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                     <MenuIcon />
