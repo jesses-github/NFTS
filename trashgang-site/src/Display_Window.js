@@ -1,11 +1,12 @@
 import React from "react";
 import NFTBrowser from "./NFT_Browser";
 import About from "./About";
+import LandingSplash from "./LandingSplash";
 
 export default function DisplayWindow(){
-  return ( <div className="display_window">
+  return ( <div className="content_box">
+    <LandingSplash />
     <About />
-    <h1 className="about">Hot Trash!</h1>
     <NFTBrowser />
     </div>
   );
